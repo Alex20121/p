@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Вітаємо, User!</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#team">Наша команда</a>
+            <a href="#interactive">Інтерактив</a>
+            <a href="#contact">Контакти</a>
+        </nav>
+    </header>
+    <section id="home">
+        <h2>Welcome to our Interactive Website</h2>
+        <p>Explore our interactive features and games! Magic happens here.</p>
+    </section>
+    <section id="team">
+        <h2>Наша команда</h2>
+        <p>Ім’я студента</p>
+        <p>Інформація про роботу, яку він/вона виконав/ла</p>
+    </section>
+    <section id="interactive">
+        <h2>Популярні інетрактивні ігри</h2>
+        <div class="game">
+            <h3>Перевір в який рік ти народився</h3>
+            <input type="text" id="yearInput" placeholder="Введіть рік народження">
+            <button onclick="checkLeapYear()">Перевір</button>
+            <p id="leapYearResult"></p>
+        </div>
+        <div class="game">
+            <h3>Вгадай число, яке загадав комп’ютер</h3>
+            <input type="text" id="guessInput" placeholder="Введіть число">
+            <button onclick="guessNumber()">Вгадати</button>
+            <p id="guessResult"></p>
+        </div>
+        <div class="game">
+            <h3>Камінь - ножиці - папір</h3>
+            <button onclick="playGame('rock')">Камінь</button>
+            <button onclick="playGame('scissors')">Ножиці</button>
+            <button onclick="playGame('paper')">Папір</button>
+            <p>Рахунок: Комп’ютер - <span id="compScore">0</span>, Ви - <span id="userScore">0</span></p>
+            <p id="rpsResult"></p>
+        </div>
+        <div class="calculator">
+            <h3>Калькулятор</h3>
+            <input type="text" id="calcInput1" placeholder="Введіть число">
+            <input type="text" id="calcInput2" placeholder="Введіть число">
+            <button onclick="calculate('+')">+</button>
+            <button onclick="calculate('-')">-</button>
+            <button onclick="calculate('*')">*</button>
+            <button onclick="calculate('/')">/</button>
+            <p>Результат: <span id="calcResult"></span></p>
+        </div>
+        <div class="time-calculator">
+            <h3>Калькулятор часу</h3>
+            <input type="text" id="timeInput" placeholder="Введіть число">
+            <p id="timeResult">3 дн. 15:45:01</p>
+        </div>
+        <div class="dino-game">
+            <h3>Google динозавр</h3>
+            <p>Футбол</p>
+        </div>
+        <div class="number-game">
+            <h3>Введіть 3 числа</h3>
+            <input type="text" id="numInput1" placeholder="Введіть число">
+            <input type="text" id="numInput2" placeholder="Введіть число">
+            <input type="text" id="numInput3" placeholder="Введіть число">
+            <button onclick="findMaxNumber()">Знайти найбільше</button>
+            <p>Найбільше число, яке ви ввели - <span id="maxNumber"></span></p>
+        </div>
+        <div class="scientist-section">
+            <h3>Обери вченого/их</h3>
+            <p>Які вчені народилися в 19 ст.</p>
+            <p>Знайти рік народження Albert Einshtein</p>
+            <p>Відсортувати вчених за алфавітом</p>
+            <p>Знайти вчених, прізвища яких починаються на на літеру “С”</p>
+            <p>Відсортувати вчених за кількістю прожитих років</p>
+            <p>Видалити всіх вчених, ім’я яких починається на “А”</p>
+            <p>Знайти вченого, який народився найпізніше</p>
+            <p>Знайти вченого, який прожив найдовше і вченого, який прожив найменше</p>
+            <p>Знайти вчених, в яких співпадають перші літери імені і прізвища</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Контакти</h2>
+        <form onsubmit="sendMessage(event)">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Тел: +38 (123) 456 78 90</p>
+        <p>E-Mail: <a href="mailto:codingmagic@gmail.com">codingmagic@gmail.com</a></p>
+        <p>Facebook: <a href="https://facebook.com/CodingMagic">CodingMagic</a></p>
+        <p>Twitter: <a href="https://twitter.com/CodingMagic">CodingMagic</a></p>
+        <p>Instagram: <a href="https://instagram.com/CodingMagic">CodingMagic</a></p>
+        <form onsubmit="subscribe(event)">
+            <input type="email" placeholder="Ваша ел. адреса..." required>
+            <button type="submit">Підписатись</button>
+            <p>*Підписавшись, Ви зможете ортимувати інформаццію про новинки на сайті</p>
+        </form>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
