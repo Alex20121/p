@@ -69,6 +69,21 @@ function calculate(operator) {
 
     resultElem.textContent = result;
 }
+document.getElementById('calculateTimeButton').addEventListener('click', function() {
+    const timeInput = document.getElementById('timeInput').value;
+    const timeResult = document.getElementById('timeResult');
+    
+    if (timeInput) {
+        const seconds = parseInt(timeInput);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remainingSeconds = seconds % 60;
+
+        timeResult.textContent = `${hours} hours, ${minutes} minutes, and ${remainingSeconds} seconds`;
+    } else {
+        timeResult.textContent = 'Please enter a valid number.';
+    }
+});
 
 // Find Maximum Number
 function findMaxNumber() {
@@ -90,84 +105,3 @@ function subscribe(event) {
     event.preventDefault();
     alert('Subscribed successfully!');
 }
-
-// Google Dinosaur Game
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
-
-let dino = { x: 50, y: 150, width: 50, height: 50, vy: 0, gravity: 0.5, jumpForce: -10, jumping: false };
-let obstacles = [];
-let score = 0;
-let gameOver = false;
-
-function drawDino() {
-    ctx.fillStyle = 'black';
-    ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
-}
-
-function updateDino() {
-    if (dino.jumping) {
-        dino.vy += dino.gravity;
-        dino.y += dino.vy;
-        if (dino.y > 150) {
-            dino.y = 150;
-            dino.vy = 0;
-            dino.jumping = false;
-        }
-    }
-}
-
-function jump() {
-    if (!dino.jumping) {
-        dino.vy = dino.jumpForce;
-        dino.jumping = true;
-    }
-}
-
-function createObstacle() {
-    const obstacle = { x: canvas.width, y: 150, width: 20, height: 20 };
-    obstacles.push(obstacle);
-}
-
-function drawObstacles() {
-    ctx.fillStyle = 'red';
-    obstacles.forEach(obstacle => {
-        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-        obstacle.x -= 2;
-    });
-}
-
-function checkCollision() {
-    obstacles.forEach(obstacle => {
-        if (
-            dino.x < obstacle.x + obstacle.width &&
-            dino.x + dino.width > obstacle.x &&
-            dino.y < obstacle.y + obstacle.height &&
-            dino.y + dino.height > obstacle.y
-        ) {
-            gameOver = true;
-        }
-    });
-}
-
-function gameLoop() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawDino();
-    drawObstacles();
-    updateDino();
-    checkCollision();
-    if (!gameOver) {
-        requestAnimationFrame(gameLoop);
-    } else {
-        ctx.fillStyle = 'black';
-        ctx.font = '30px Arial';
-        ctx.fillText('Game Over', canvas.width / 2 - 75, canvas.height / 2);
-    }
-}
-
-document.addEventListener('keydown', function(event) {
-    if (event.code === 'Space' || event.code === 'ArrowUp') {
-        jump();
-    }
-});
-
