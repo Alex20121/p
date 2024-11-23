@@ -22,13 +22,28 @@
     </section>
     <section id="team">
         <h2>Our Team</h2>
-        <p>Team member names and roles</p>
+        <div class="team-member">
+            <img src="2image.png" alt="Team Member 1">
+            <h3>Team Member 1</h3>
+            <p>Role: Developer</p>
+        </div>
+        <div class="team-member">
+            <img src="1image.png" alt="Team Member 2">
+            <h3>Team Member 2</h3>
+            <p>Role: Designer</p>
+        </div>
+        <div class="team-member">
+            <img src="image.png" alt="Team Member 3">
+            <h3>Team Member 3</h3>
+            <p>Role: Project Manager</p>
+        </div>
     </section>
+    
     <section id="interactive">
         <h2>Popular Interactive Games</h2>
         <div class="game">
             <h3>Перевір в який рік ти народився</h3>
-            <input type="text" id="yearInput" placeholder="Введіть рік народження">
+            <input type="date" id="yearInput" placeholder="Введіть рік народження">
             <button onclick="checkLeapYear()">Перевір</button>
             <p id="leapYearResult"></p>
         </div>
@@ -93,15 +108,28 @@
             </div>
             <div class="scientist-section">
                 <h3>Обери вченого/их</h3>
-                <p>Які вчені народилися в 19 ст.</p>
-                <p>Знайти рік народження Albert Einshtein</p>
-                <p>Відсортувати вчених за алфавітом</p>
-                <p>Знайти вчених, прізвища яких починаються на на літеру “С”</p>
-                <p>Відсортувати вчених за кількістю прожитих років</p>
-                <p>Видалити всіх вчених, ім’я яких починається на “А”</p>
-                <p>Знайти вченого, який народився найпізніше</p>
-                <p>Знайти вченого, який прожив найдовше і вченого, який прожив найменше</p>
-                <p>Знайти вчених, в яких співпадають перші літери імені і прізвища</p>
+                <div class="questions">
+                    <p class="draggable" draggable="true" id="q1">Charles Darwin, Dmitri Mendeleev</p>
+                    <p class="draggable" draggable="true" id="q2">1879</p>
+                    <p class="draggable" draggable="true" id="q3">Marie Curie, Nikola Tesla</p>
+                    <p class="draggable" draggable="true" id="q4">Carl Sagan, Isaac Newton</p>
+                    <p class="draggable" draggable="true" id="q5">Marie Curie: 66 years, Nikola Tesla: 86 years</p>
+                    <p class="draggable" draggable="true" id="q6">Alexander Graham Bell</p>
+                    <p class="draggable" draggable="true" id="q7">Marie Curie: 1867, Nikola Tesla: 1856</p>
+                    <p class="draggable" draggable="true" id="q8">Longest: Isaac Newton (84 years), Shortest: Marie Curie (66 years)</p>
+                    <p class="draggable" draggable="true" id="q9">Carl Sagan, Gregor Mendel</p>
+                </div>
+                <div class="answers">
+                    <div class="dropzone" data-answer="q1">Які вчені народилися в 19 ст.</div>
+                    <div class="dropzone" data-answer="q2">Знайти рік народження Albert Einstein</div>
+                    <div class="dropzone" data-answer="q3">Відсортувати вчених за алфавітом</div>
+                    <div class="dropzone" data-answer="q4">Знайти вчених, прізвища яких починаються на літеру “С”</div>
+                    <div class="dropzone" data-answer="q5">Відсортувати вчених за кількістю прожитих років</div>
+                    <div class="dropzone" data-answer="q6">Видалити всіх вчених, ім’я яких починається на “А”</div>
+                    <div class="dropzone" data-answer="q7">Знайти вченого, який народився найпізніше</div>
+                    <div class="dropzone" data-answer="q8">Знайти вченого, який прожив найдовше і вченого, який прожив найменше</div>
+                    <div class="dropzone" data-answer="q9">Знайти вчених, в яких співпадають перші літери імені і прізвища</div>
+                </div>
             </div>
         </div>
     </section>
@@ -126,6 +154,7 @@
     </section>
     <script src="dinoGame.js"></script>
     <script src="footballGame.js"></script>
+    <script src="scientistgame.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

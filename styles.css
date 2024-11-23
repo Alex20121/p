@@ -26,6 +26,35 @@ nav a:hover {
 h1, h2 {
     color: #333;
 }
+#team {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #777;
+}
 
 section {
     padding: 20px;
@@ -125,4 +154,48 @@ canvas {
 
 #pauseMenuDino button:hover, #pauseMenuFootball button:hover {
     background-color: #0056b3;
+}
+
+.scientist-section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.questions, .answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+
+.draggable {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: move;
+    width: 200px;
+}
+
+.dropzone {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 20px;
+    margin: 5px;
+    border: 2px dashed #6c757d;
+    border-radius: 5px;
+    width: 200px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone.hovered {
+    background-color: #adb5bd;
 }

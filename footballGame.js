@@ -5,7 +5,7 @@ const goalKeeper = {
     x: 20,  // Goalkeeper on the left side
     y: canvas.height / 2 - 20,
     width: 10,
-    height: 40,
+    height: 100,
     speed: 10,
     dy: 0
 };
@@ -13,7 +13,7 @@ const goalKeeper = {
 const ball = {
     x: canvas.width / 2,
     y: canvas.height / 2,
-    radius: 10,
+    radius: 20,
     speed: 4,
     dx: 4,
     dy: 4
@@ -94,21 +94,22 @@ function updateFootball() {
 }
 
 function keyDownFootball(e) {
-    if (e.key === 'ArrowUp') {
+    if (e.key === 'w') {
         goalKeeper.dy = -goalKeeper.speed;
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === 's') {
         goalKeeper.dy = goalKeeper.speed;
     }
 }
 
 function keyUpFootball(e) {
-    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+    if (e.key === 'w' || e.key === 's') {
         goalKeeper.dy = 0;
     }
 }
 
 document.addEventListener('keydown', keyDownFootball);
 document.addEventListener('keyup', keyUpFootball);
+
 
 const pauseButtonFootball = document.getElementById('pauseButtonFootball');
 const pauseMenuFootball = document.getElementById('pauseMenuFootball');
